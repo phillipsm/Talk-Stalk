@@ -1,0 +1,45 @@
+Talk Stalk is a simple application (really, just three or four scripts)
+that allow you to track the history of people in your instant messenger buddy
+list (XMPP roster).
+
+Talk Stalk is very much a bare-bones project. If you have questions or comments,
+send them to the Talk Stalk creator, Matthew Phillips: labratmatt at gmail daht com
+
+Talk Stalk has been tested on the following env:
+*Apache 2.2 with mod_php5
+*MySQL 5.1
+*Python 2.6.1 with the following modules:
+ - xmpppy-0.5.0rc1-py2.6.egg
+ - MySQL_python-1.2.3-py2.6-macosx-10.6-universal.egg
+
+
+To setup Talk Stalk, follow along below:
+
+1. Place this directory (yes, the directory that houses this README file) in 
+your web server's HTTP Docs directory.
+
+2. Create a MySQL table:
+
+CREATE TABLE `event` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `jid` varchar(2000) NOT NULL,
+  `start` timestamp NOT NULL,
+  `end` timestamp NOT NULL,
+  `duration` bitint unsigned NOT NULL,
+  `show_message` varchar(2000) NOT NULL,
+  `other` varchar(2000),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+3. Start up the Talk Stalk daemon:
+python ts_daemon.py
+
+4. Update the MySQL hostname, user name, and pasword in:
+- eventsservice.php
+- usersservice.
+- ts_daemon.js
+
+5. Update the XMPP username and password in ts_daemon.js. This should be something your 
+instant messenger username and password.
+
+6. Go to http://hostname.com/talk_stalk/index.html Have fun.

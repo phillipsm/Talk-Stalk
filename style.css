@@ -1,0 +1,35 @@
+.some_event, .missing_time{
+	overflow: hidden;
+	float: left;
+	cursor: pointer;
+}
+
+.missing_time{
+	background-color: brown;
+}
+
+.single_row {
+	border-style: solid;
+	border-width: 2px;
+	height: 38px;
+	margin-top: 7px;
+}
+
+#header_left {
+	float: left;
+	font-size: 30px;
+}
+
+#header_right {
+	float: right;
+}
+
+#options {
+	margin-right: 10px;
+}
+
+#main_container {
+	width: 1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
